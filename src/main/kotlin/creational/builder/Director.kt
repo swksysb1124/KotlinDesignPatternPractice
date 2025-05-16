@@ -8,22 +8,16 @@ fun main() {
 }
 
 fun createNotificationSetting(email: String?, phoneNumber: String?): NotificationSetting {
-    val builder = NotificationSettingBuilder()
-    builder.enabled = true
-    if (email != null) builder.addSubscription(
-        EmailAddress(email),
-        Subscription.Topic.ANALYTICS,
-        Subscription.Frequency.DAILY
-    )
-    if (email != null) builder.addSubscription(
-        EmailAddress(email),
-        Subscription.Topic.NEWS,
-        Subscription.Frequency.WEEKLY
-    )
-    if (phoneNumber != null) builder.addSubscription(
-        PhoneNumber(phoneNumber),
-        Subscription.Topic.SECURITY_ALERTS,
-        Subscription.Frequency.IMMEDIATELY
-    )
-    return builder.build()
+    return buildNotificationSetting {
+        enabled = true
+        if (email != null) {
+            addSubscription(EmailAddress(email), Subscription.Topic.ANALYTICS, Subscription.Frequency.DAILY)
+        }
+        if (email != null) {
+            addSubscription(EmailAddress(email), Subscription.Topic.NEWS, Subscription.Frequency.WEEKLY)
+        }
+        if (phoneNumber != null) {
+            addSubscription(PhoneNumber(phoneNumber), Subscription.Topic.SECURITY_ALERTS, Subscription.Frequency.IMMEDIATELY)
+        }
+    }
 }

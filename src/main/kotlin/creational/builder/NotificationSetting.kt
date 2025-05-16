@@ -32,3 +32,6 @@ interface INotificationSettingBuilder {
     fun addSubscription(description: Description, topic: Subscription.Topic, freq: Subscription.Frequency)
     fun build(): NotificationSetting
 }
+
+fun buildNotificationSetting(block: NotificationSettingBuilder.() -> Unit) =
+    NotificationSettingBuilder().apply(block).build()
