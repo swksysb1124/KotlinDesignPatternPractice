@@ -2,7 +2,7 @@ package org.example.creational.factorymethod
 
 fun main() {
     printMessage(JSONMessageCreator())
-    printMessage(TextMessageCreator ())
+    printMessage(TextMessageCreator())
 }
 
 fun printMessage(creator: MessageCreator) {
