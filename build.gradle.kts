@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("org.apache.commons:commons-text:1.13.1")
 }
 
 tasks.test {
