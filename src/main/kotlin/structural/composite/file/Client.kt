@@ -1,4 +1,4 @@
-package org.example.structural.composite
+package org.example.structural.composite.file
 
 fun main() {
     val rootDir = initializeFileHierarchy()

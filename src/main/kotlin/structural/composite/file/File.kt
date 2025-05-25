@@ -1,4 +1,4 @@
-package org.example.structural.composite
+package org.example.structural.composite.file
 
 // Component
 abstract class File(

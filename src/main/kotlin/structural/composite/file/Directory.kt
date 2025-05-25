@@ -1,4 +1,4 @@
-package org.example.structural.composite
+package org.example.structural.composite.file
 
 class Directory(name: String) : File(name) {
     private val childFiles = mutableListOf<File>()
